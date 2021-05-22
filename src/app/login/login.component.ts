@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
     1003: { acno: 1003, username: "userfour", password: "userfour", balance: 6000 },
   }
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -39,6 +40,7 @@ export class LoginComponent implements OnInit {
     if (acno in users) {
       if (pswd == users[acno]["password"]) {
         alert("Login Successful")
+        this.router.navigateByUrl("dashboard")
       }
       else {
         alert("Incorrect Password")
@@ -47,6 +49,9 @@ export class LoginComponent implements OnInit {
     else {
       alert("Invalid Account")
     }
+  }
+  register(){
+    this.router.navigateByUrl("register")
   }
 
 
