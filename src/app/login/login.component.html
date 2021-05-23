@@ -5,16 +5,17 @@
 			<div class="main">
 				<h2 class="mb-4">Welcome to Easy Bank</h2>
 				<h6 class="mb-5">{{aim}}</h6>
-
-				<input type="text" class="mb-3 first" id="acno" [(ngModel)]="acno" placeholder="Enter Account Number"> <br>
-				<input type="password" class="mb-5 first" id="pwd" [(ngModel)]="pswd" placeholder="Enter Password"><br>
+				<form (ngSubmit)="login()">
+					<input type="text" class="mb-3 first" id="acno" name="acno" [(ngModel)]="acno" placeholder="Enter Account Number"> <br>
+					<input type="password" class="mb-5 first" id="pwd" name="pswd" [(ngModel)]="pswd" placeholder="Enter Password"><br>
 				
-				<input type="button" value="Log In" class="col-8 btn mb-2" id="buttonlogin" (click)="login()"> <br>
+					<input type="submit" value="Log In" class="col-8 btn mb-2" id="buttonlogin"> <br>
 				
-				<a routerLink="register">Forgot password?</a> <br>
+					<a routerLink="register">Forgot password?</a> <br>
 
-				<input type="button" value="Create New Account" class="col-8 btn mt-4" id="buttonsignin" (click)="register()"> <br>	
-			</div>
+					<input type="button" value="Create New Account" class="col-8 btn mt-4" id="buttonsignin" (click)="register()"> <br>	
+				</form>
+				</div>
 		</div>
 	</div> 
 </div>

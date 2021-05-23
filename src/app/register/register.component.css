@@ -16,6 +16,12 @@
     text-align: center;
     color: black;
 }
+.head{
+    color: blue;
+}
+.reg{
+    color: red;
+}
 .first{
     border: none;
     border-radius: 5px;

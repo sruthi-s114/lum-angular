@@ -3,15 +3,18 @@
 		<div class="col-4"></div>
 		<div class="col-4">
 			<div class="main">
-				<h2 class="mb-4">Welcome to Easy Bank</h2>
-				<h6 class="mb-4">{{aim}}</h6>
-                <h4 class="mb-4">Register Form</h4>
+				<h2 class="mb-4 head">Welcome to Easy Bank</h2>
+				<h6 class="mb-4 head">{{aim}}</h6>
+                <h4 class="mb-4 reg">Register Form</h4>
 
-				<input type="text" class="mb-3 first" id="acno" [(ngModel)]="acno" placeholder="Enter Account Number"> <br>
-                <input type="text" class="mb-3 first" id="acno" [(ngModel)]="uname" placeholder="Enter Username"> <br>
-				<input type="password" class="mb-5 first" id="pwd" [(ngModel)]="pswd" placeholder="Enter Password"><br>
+				<form (ngSubmit)="register()">
+					<input type="text" class="mb-3 first" id="acno" name="accno" [(ngModel)]="acno" placeholder="Enter Account Number"> <br>
+                	<input type="text" class="mb-3 first" id="acno" name="uname" [(ngModel)]="uname" placeholder="Enter Username"> <br>
+					<input type="password" class="mb-5 first" id="pwd" name="pswd" [(ngModel)]="pswd" placeholder="Enter Password"><br>
 				
-                <input type="button" value="Register" class="col-8 btn" id="buttonsignin" (click)="register()"> <br>
+                	<input type="submit" value="Register" class="col-8 btn mb-3" id="buttonsignin"> <br>
+					<a routerLink="">Log In</a>
+				</form>
 			</div>
 		</div>
 	</div> 
