@@ -8,8 +8,8 @@
 .main{
     background-color: white;
     margin-top: 100px;
-    margin-left:70px ;
-    padding-top: 50px;
+    margin-left:70px;
+    padding-top: 30px;
     width: 450px;
     height: 550px;
     border: 1px solid black;
@@ -34,4 +34,9 @@
     height: 50px;
     background-color: rgb(184, 29, 29);
     color: white;
+}
+.error{
+    color: red;
+    text-align: left;
+    margin-left:50px;
 }

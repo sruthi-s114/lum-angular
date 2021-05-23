@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -17,15 +18,29 @@ export class DashboardComponent implements OnInit {
   wPswd="";
   wAmount="";
 
-  constructor( private dataService:DataService) { }
+  depositForm=this.fb.group({
+    dAccno:[''],
+    dPswd:[''],
+    dAmount:['']
+
+  })
+
+  withdrawForm=this.fb.group({
+    wAccno:[''],
+    wPswd:[''],
+    wAmount:['']
+
+  })
+
+  constructor( private dataService:DataService, private fb:FormBuilder) { }
 
   ngOnInit(): void {
   }
 
   deposit(){
-    var accno=this.dAccno;
-    var pswd=this.dPswd;
-    var amount=this.dAmount;
+    var accno=this.depositForm.value.dAccno;
+    var pswd=this.depositForm.value.dPswd;
+    var amount=this.depositForm.value.dAmount;
 
     const result=this.dataService.deposit(accno,pswd,amount)
 
@@ -35,9 +50,9 @@ export class DashboardComponent implements OnInit {
   }
 
   withdraw(){
-    var accno=this.wAccno;
-    var pswd=this.wPswd;
-    var amount=this.wAmount;
+    var accno=this.withdrawForm.value.wAccno;
+    var pswd=this.withdrawForm.value.wPswd;
+    var amount=this.withdrawForm.value.wAmount;
 
     const result=this.dataService.withdraw(accno,pswd,amount)
 

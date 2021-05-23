@@ -5,10 +5,10 @@
 		<div class="col-4">
 			<div class="mainone">
 				<h4 class="mb-4">Deposit Form</h4>
-				<form (ngSubmit)="deposit()">
-					<input type="text" class="mb-3 first" id="acno" [(ngModel)]="dAccno" name="acno"  placeholder="Enter Account Number"> <br>
-					<input type="password" class="mb-3 first" id="pwd" [(ngModel)]="dPswd" name="pswd"  placeholder="Enter Password"><br>
-                    <input type="text" class="mb-5 first" id="amnt" [(ngModel)]="dAmount" name="amnt"  placeholder="Enter Amount"><br>
+				<form [formGroup]="depositForm" (ngSubmit)="deposit()">
+					<input type="text" class="mb-3 first" id="acno" formControlName="dAccno" name="acno"  placeholder="Enter Account Number"> <br>
+					<input type="password" class="mb-3 first" id="pwd" formControlName="dPswd" name="pswd"  placeholder="Enter Password"><br>
+                    <input type="text" class="mb-5 first" id="amnt" formControlName="dAmount" name="amnt"  placeholder="Enter Amount"><br>
 				
 					<input type="submit" value="Deposit" class="col-8 btn" id="buttondeposit"> <br>
 				</form>
@@ -21,10 +21,10 @@
 		<div class="col-4">
 			<div class="maintwo">
 				<h4 class="mb-4">Withdraw Form</h4>
-				<form (ngSubmit)="withdraw()">
-					<input type="text" class="mb-3 first" id="acno" [(ngModel)]="wAccno" name="acno"  placeholder="Enter Account Number"> <br>
-					<input type="password" class="mb-3 first" id="pwd" [(ngModel)]="wPswd" name="pswd"  placeholder="Enter Password"><br>
-                    <input type="text" class="mb-5 first" id="amnt" [(ngModel)]="wAmount" name="amnt"  placeholder="Enter Amount"><br>
+				<form [formGroup]="withdrawForm" (ngSubmit)="withdraw()">
+					<input type="text" class="mb-3 first" id="acno" formControlName="wAccno" name="acno"  placeholder="Enter Account Number"> <br>
+					<input type="password" class="mb-3 first" id="pwd" formControlName="wPswd" name="pswd"  placeholder="Enter Password"><br>
+                    <input type="text" class="mb-5 first" id="amnt" formControlName="wAmount" name="amnt"  placeholder="Enter Amount"><br>
 				
 					<input type="submit" value="Withdraw" class="col-8 btn" id="buttonwithdraw"> <br>
 				</form>

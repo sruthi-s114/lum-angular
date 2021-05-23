@@ -20,8 +20,8 @@ export class DataService {
         return true;
       }
       else {
+        alert("Incorrect Password ")
         return false;
-        alert("Incorrect Password")
       }
     }  
     else {
@@ -30,7 +30,7 @@ export class DataService {
     }
   }
 
-  register(uname:any, acno:any, pswd:any){
+  register(acno:any, uname:any, pswd:any){
     let user=this.accountDetails;
     if(acno in user){
       return false;

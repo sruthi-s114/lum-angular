@@ -5,9 +5,9 @@
 			<div class="main">
 				<h2 class="mb-4">Welcome to Easy Bank</h2>
 				<h6 class="mb-5">{{aim}}</h6>
-				<form (ngSubmit)="login()">
-					<input type="text" class="mb-3 first" id="acno" name="acno" [(ngModel)]="acno" placeholder="Enter Account Number"> <br>
-					<input type="password" class="mb-5 first" id="pwd" name="pswd" [(ngModel)]="pswd" placeholder="Enter Password"><br>
+				<form [formGroup]="loginForm" (ngSubmit)="login()">
+					<input type="text" class="mb-3 first" id="acno" name="acno" formControlName="acno" placeholder="Enter Account Number"> <br>
+					<input type="password" class="mb-5 first" id="pwd" name="pswd" formControlName="pswd" placeholder="Enter Password"><br>
 				
 					<input type="submit" value="Log In" class="col-8 btn mb-2" id="buttonlogin"> <br>
 				
