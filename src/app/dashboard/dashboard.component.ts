@@ -10,27 +10,21 @@ import { DataService } from '../services/data.service';
 })
 export class DashboardComponent implements OnInit {
 
-  dAccno="";
-  dPswd="";
-  dAmount="";
-
-  wAccno="";
-  wPswd="";
-  wAmount="";
-
   depositForm=this.fb.group({
-    dAccno:[''],
-    dPswd:[''],
-    dAmount:['']
+    acno:['',[Validators.required,Validators.pattern('[0-9]*')]],
+    pswd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]*')]],
+    amount:['',[Validators.required,Validators.pattern('[0-9]*')]]
 
   })
 
   withdrawForm=this.fb.group({
-    wAccno:[''],
-    wPswd:[''],
-    wAmount:['']
+    acno:['',[Validators.required,Validators.pattern('[0-9]*')]],
+    pswd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]*')]],
+    amount:['',[Validators.required,Validators.pattern('[0-9]*')]]
 
   })
+
+  user=this.dataService.currentUser;
 
   constructor( private dataService:DataService, private fb:FormBuilder) { }
 
@@ -38,26 +32,36 @@ export class DashboardComponent implements OnInit {
   }
 
   deposit(){
-    var accno=this.depositForm.value.dAccno;
-    var pswd=this.depositForm.value.dPswd;
-    var amount=this.depositForm.value.dAmount;
+    if(this.depositForm.valid){
+      var accno=this.depositForm.value.acno;
+      var pswd=this.depositForm.value.pswd;
+      var amount=this.depositForm.value.amount;
 
-    const result=this.dataService.deposit(accno,pswd,amount)
+      const result=this.dataService.deposit(accno,pswd,amount)
 
-    if(result){
-      alert("Your account has been credited with "+amount+" and new balance is "+result)
+      if(result){
+       alert("Your account has been credited with "+amount+" and new balance is "+result)
+      }
+    }
+    else{
+      alert("Invalid Form")
     }
   }
 
   withdraw(){
-    var accno=this.withdrawForm.value.wAccno;
-    var pswd=this.withdrawForm.value.wPswd;
-    var amount=this.withdrawForm.value.wAmount;
+    if(this.withdrawForm.valid){
+      var accno=this.withdrawForm.value.acno;
+      var pswd=this.withdrawForm.value.pswd;
+      var amount=this.withdrawForm.value.amount;
 
-    const result=this.dataService.withdraw(accno,pswd,amount)
+      const result=this.dataService.withdraw(accno,pswd,amount)
 
-    if(result){
-      alert(+amount+" has been debited from your account and new balance is "+result)
+      if(result){
+        alert(+amount+" has been debited from your account and new balance is "+result)
+      }
+    }
+    else{
+      alert("Invalid Form")
     }
   }
 }

@@ -11,8 +11,7 @@ import { DataService } from '../services/data.service';
 export class LoginComponent implements OnInit {
 
   aim="Your Perfect Banking Partner"
-  acno="Enter Account Number"
-  pswd=""
+  
 
   loginForm=this.fb.group({
     acno:['',[Validators.required,Validators.pattern('[0-9]*')]],

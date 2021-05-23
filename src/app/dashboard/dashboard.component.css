@@ -11,22 +11,22 @@ h1{
 }
 .mainone{
     background-color: rgb(255, 184, 184);
-    margin-top: 50px;
+    margin-top: 10px;
     margin-left:80px ;
-    padding-top: 30px;
+    padding-top: 20px;
     width: 450px;
-    height: 370px;
+    height: 420px;
     border: 1px solid black;
     text-align: center;
     color: black;
 }
 .maintwo{
     background-color: rgb(95, 181, 192);
-    margin-top: 50px;
+    margin-top: 10px;
     margin-left:80px ;
-    padding-top: 30px;
+    padding-top: 20px;
     width: 450px;
-    height: 370px;
+    height: 420px;
     border: 1px solid black;
     text-align: center;
     color: black;
@@ -48,4 +48,9 @@ h1{
     height: 50px;
     background-color: rgb(5, 148, 5);
     color: white;
+}
+.error{
+    color: red;
+    text-align: left;
+    margin-left:75px;
 }

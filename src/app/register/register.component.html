@@ -8,16 +8,16 @@
                 <h4 class="mb-4 reg">Register Form</h4>
 
 				<form [formGroup]="registerForm" (ngSubmit)="register()">
-					<input type="text" class=" first" id="acno" name="acno" formControlName="acno" placeholder="Enter Account Number"> <br>
-					<div class="error mb-3">Invalid Account Number</div>
+					<input type="text" class="first" id="acno" name="acno" formControlName="acno" placeholder="Enter Account Number"> <br>
+					<div *ngIf="(registerForm.get('acno')?.touched || registerForm.get('acno')?.dirty) && registerForm.get('acno')?.errors" class="error">Invalid Account Number</div> <br>
 
                 	<input type="text" class="first" id="acno" name="uname" formControlName="uname" placeholder="Enter Username"> <br>
-					<div class="error mb-3">Invalid Username</div>
+					<div *ngIf="(registerForm.get('uname')?.touched || registerForm.get('uname')?.dirty) && registerForm.get('uname')?.errors" class="error">Invalid Username</div> <br>
 
 					<input type="password" class="first" id="pwd" name="pswd" formControlName="pswd" placeholder="Enter Password"><br>
-					<div class="error mb-3">Invalid Password</div>
+					<div *ngIf="(registerForm.get('pswd')?.touched || registerForm.get('pswd')?.dirty) && registerForm.get('pswd')?.errors" class="error">Invalid Password</div> <br>
 
-                	<input type="submit" value="Register" class="col-8 btn mb-3" id="buttonsignin"> <br>
+                	<input type="submit" value="Register" class="col-8 btn" id="buttonsignin"> <br> <br>
 					<a routerLink="">Log In</a>
 				</form>
 			</div>

@@ -10,9 +10,7 @@ import { DataService } from '../services/data.service';
 })
 export class RegisterComponent implements OnInit {
   aim="Your Perfect Banking Partner"
-  uname="";
-  acno="";
-  pswd="";
+ 
 
   registerForm=this.fb.group({
     acno:['',[Validators.required,Validators.pattern('[0-9]*')]],
@@ -28,11 +26,6 @@ export class RegisterComponent implements OnInit {
   }
 
   register(){
-
-    if(this.registerForm.get('acno')?.errors){
-      alert("Invalid Username")
-    }
-  
     if(this.registerForm.valid){
 
       var uname=this.registerForm.value.uname;
